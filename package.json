@@ -9,7 +9,6 @@
   "author": "knomedia@gmail.com",
   "license": "MIT",
   "dependencies": {
-    "copy-paste": "1.0.2",
     "lil-uri": "0.2.0",
     "object.assign": "1.1.1"
   },
