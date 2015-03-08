@@ -1,0 +1,19 @@
+{
+  "name": "glink",
+  "version": "1.0.0",
+  "description": "generate graphite links",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "knomedia@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "copy-paste": "^1.0.2",
+    "lil-uri": "^0.2.0",
+    "object.assign": "^1.1.1"
+  },
+  "bin": {
+    "glink": "bin/glink.js"
+  }
+}
