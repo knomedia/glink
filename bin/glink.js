@@ -7,7 +7,7 @@ var paramBuilder = require('../lib/paramBuilder');
 var args = process.argv.slice(2);
 var params = paramBuilder(args);
 var link = createLink({
-  host: 'graphite.insops.net',
+  hostname: 'graphite.insops.net',
   query: params
 });
 
