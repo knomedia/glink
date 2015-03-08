@@ -9,6 +9,7 @@
     "!!#action#!!***index",
     "!!#type#!!***{mean,median,upper_95}"
   ],
+  "templateDefaultDelimiter": "***",
 
   "paramsDefaults": {
     "from": "-1week",
