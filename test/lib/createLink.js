@@ -20,6 +20,14 @@ describe('createLink', function() {
     equal('https://example.com/render', uri);
   })
 
+  it('uses default protocol if passed in value is undefined', function() {
+    var uri = createLink({
+      hostname: 'example.com',
+      protocol: undefined
+    });
+    equal('https://example.com/render', uri);
+  });
+
   it('applies given  protocol', function(){
     var uri = createLink({
       hostname: 'example.com',
