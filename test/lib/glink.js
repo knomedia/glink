@@ -10,9 +10,10 @@ function createConfig(params) {
     hostname: 'graphite.example.com',
     template: 'foo.bar.##controller##.##action##',
     templateDefaults: [
-      '##controller##===foo',
-      '##action##===bar',
+      '##controller##***foo',
+      '##action##***bar',
     ],
+    templateDefaultDelimiter: '***',
     paramsDefaults: params
   };
 }
