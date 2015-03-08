@@ -5,28 +5,24 @@ var createLink = require('../lib/createLink');
 var createParams = require('../lib/createParams');
 var argsParser = require('../lib/argsParser');
 var createTarget = require('../lib/createTarget');
+var config = require('../config.template.json');
 
 var argTypes = argsParser(process.argv.slice(2));
+var target = createTarget(config.template, argTypes.targetArgs, config.templateDefaults);
 
-var template = 'stats.timers.canvas.prod.request.!!#controller#!!.!!#action#!!';
-var templateDefaults = [
-  '!!#controller#!!===files',
-  '!!#action#!!===index'
-]
-var target = createTarget(template, argTypes.targetArgs, templateDefaults);
+var paramDefaults = config.paramsDefaults;
+paramDefaults.target = target;
 
-var paramDefaults = {
-  from: '-1week',
-  width: '450',
-  height: '450',
-  target: target
-}
 var params = createParams(argTypes.params, paramDefaults);
 
-var link = createLink({
-  hostname: 'graphite.insops.net',
+linkOptions = {
+  protocol: config.protocol,
+  hostname: config.hostname,
+  port: config.port,
   query: params
-});
+}
+
+var link = createLink(linkOptions);
 
 copy(link);
 console.log(link);

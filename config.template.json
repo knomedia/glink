@@ -1,0 +1,18 @@
+{
+  "protocol": "https",
+  "port": "443",
+  "hostname": "graphite.example.com",
+
+  "template": "stats.timers.prod.request.!!#controller#!!.!!#action#!!.!!#type#!!",
+  "templateDefaults": [
+    "!!#controller#!!===files",
+    "!!#action#!!===index",
+    "!!#type#!!==={mean,median,upper_95}"
+  ],
+
+  "paramsDefaults": {
+    "from": "-1week",
+    "width": "450",
+    "height": "450"
+  }
+}
