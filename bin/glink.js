@@ -8,7 +8,7 @@ var createTarget = require('../lib/createTarget');
 var config = require('../config.template.json');
 
 var argTypes = argsParser(process.argv.slice(2));
-var target = createTarget(config.template, argTypes.targetArgs, config.templateDefaults);
+var target = createTarget(config.template, argTypes.targetArgs, config.templateDefaults, config.templateDefaultDelimiter);
 
 var paramDefaults = config.paramsDefaults;
 paramDefaults.target = target;

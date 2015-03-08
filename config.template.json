@@ -5,9 +5,9 @@
 
   "template": "stats.timers.prod.request.!!#controller#!!.!!#action#!!.!!#type#!!",
   "templateDefaults": [
-    "!!#controller#!!===files",
-    "!!#action#!!===index",
-    "!!#type#!!==={mean,median,upper_95}"
+    "!!#controller#!!***files",
+    "!!#action#!!***index",
+    "!!#type#!!***{mean,median,upper_95}"
   ],
 
   "paramsDefaults": {
