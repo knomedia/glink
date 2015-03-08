@@ -1,6 +1,3 @@
-var linkCreatorFactory = require('./lib/linkCreatorFactory');
+var glink = require('./lib/glink');
 
-module.exports = {
-  linkCreatorFactory: linkCreatorFactory,
-
-}
+module.exports = glink;
