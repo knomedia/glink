@@ -7,15 +7,21 @@ var argsParser = require('../lib/argsParser');
 var createTarget = require('../lib/createTarget');
 
 var argTypes = argsParser(process.argv.slice(2));
-var target = createTarget(argTypes.targetArgs);
 
-var defaults = {
+var template = 'stats.timers.canvas.prod.request.!!#controller#!!.!!#action#!!';
+var templateDefaults = [
+  '!!#controller#!!===files',
+  '!!#action#!!===index'
+]
+var target = createTarget(template, argTypes.targetArgs, templateDefaults);
+
+var paramDefaults = {
   from: '-1week',
   width: '450',
   height: '450',
   target: target
 }
-var params = createParams(argTypes.params, defaults);
+var params = createParams(argTypes.params, paramDefaults);
 
 var link = createLink({
   hostname: 'graphite.insops.net',
