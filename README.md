@@ -54,7 +54,7 @@ For example, assume the following config:
     "##controller##===user",
     "##action##===index"
   ],
-  paramsDefaults: {}
+  "paramsDefaults": {}
 }
 ```
 
