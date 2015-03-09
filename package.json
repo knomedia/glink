@@ -1,6 +1,6 @@
 {
   "name": "glink",
-  "version": "1.0.0",
+  "version": "0.0.10",
   "description": "generate graphite links",
   "main": "index.js",
   "scripts": {
