@@ -2,7 +2,14 @@
 
 create customizable links to your graphite targets.
 
-Creating links to pull down graphite visualizations isn't difficult, it's just tedious. I generally find that there are a small number of targets ( i.e. `stats.timers.beta.request.users.index.{median,mean,upper_90}`) that I use. I just switch out a few variables. `glink` lets you create a template with default variables, and then pass those variables in to create a url.
+
+## Why
+
+Creating links to view graphite visualizations isn't difficult, it's just
+tedious. I generally find that there are a small number of targets ( i.e.
+`stats.timers.beta.request.users.index.{median,mean,upper_90}`) that I use. I
+just switch out a few variables. `glink` lets you create a template with
+default variables, and then pass those variables in to create a url.
 
 ## Usage
 
@@ -12,7 +19,7 @@ npm install -g glink
 ```
 
 
-Add to your current project
+Or add to your current project for library usage
 ``` bash
 npm install --save glink
 ```
@@ -20,7 +27,7 @@ npm install --save glink
 
 ### CLI Usage
 
-The CLI uses a config located at `~/glinkrc`. If you don't have one, upon first
+The CLI uses a config located at `~/.glinkrc`. If you don't have one, upon first
 usage it will write a default config for you (see `config.default.json` for the
 current defaults). Once your config is there it will always use it. Update it as needed.
 
@@ -86,6 +93,8 @@ Note that the first arg has been used and the default for `##action##` (in this
 case `index`) was used as there was no second variable. The param
 (`--from=-1w`) was still used and added as a query param.
 
+### Params
+
 Params (arguments in the shape of `--paramName=value`) are appended to the
 created link as query params. You can define defaults using the
 `paramsDefaults` key in your config. This is a great place to define things
@@ -136,7 +145,7 @@ KeyName     | Required? | Default       | Notes
 | paramsDefaults |      |      {}       | an object with key, value param and value defaults to apply
 
 #### templates
-Your config template is a template used to create a graphite target. You can
+Your config `template` is a template used to create a graphite target. You can
 substitute variables out of the template based on arguments passed into glink.
 Define your variables with any syntax you want. In the examples above we are
 using a `##variableName##` syntax. These will be replaced with arguments or the
@@ -151,12 +160,15 @@ strings in a special syntax:
 ##variableName##===defaultValue
 ```
 
-Where variable name is whatever you used in your `template` and `defaultValue`
+Where `##variableName##` is whatever you used in your `template` and `defaultValue`
 is the default value to use should there not be enough args provided. In this
 case we are using the `===` as a delimiter between the variable and default.
 This is the default `templateDefaultDelimiter`. Should you wish to use another
 delimiter make sure you update the `templateDefaultDelimiter` config value as
 well.
+
+For sanity define your `templateDefaults` in the same order they appear in your `template`.
+
 
 ## Contributing
 
