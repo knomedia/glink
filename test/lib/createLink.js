@@ -6,7 +6,7 @@ var createLink = require('../../lib/createLink')
 
 describe('createLink', function() {
 
-  it('applies applies the render path', function(){
+  it('applies the render path', function(){
     var uri = createLink({
       hostname: 'example.com'
     });
