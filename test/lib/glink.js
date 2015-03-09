@@ -5,7 +5,6 @@ var glink = require('../../lib/glink')
     deepEqual = assert.deepEqual;
 
 function createConfig(params) {
-  params = params || {};
   return {
     hostname: 'graphite.example.com',
     template: 'foo.bar.##controller##.##action##',
@@ -42,6 +41,13 @@ describe('glink', function() {
     var args = ['user', 'index', '--from=-4months'];
     var link = glink(config, args);
     equal(link, 'https://graphite.example.com/render?width=800&height=600&target=foo.bar.user.index&from=-4months');
+  });
+
+  it('should allow for config with no paramsDefault', function() {
+    var config = createConfig();
+    var args = ['user', 'index', '--from=-4months'];
+    var link = glink(config, args);
+    equal(link, 'https://graphite.example.com/render?target=foo.bar.user.index&from=-4months');
   });
 
 });
