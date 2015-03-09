@@ -1,4 +1,5 @@
 # glink
+[![Build Status](https://travis-ci.org/knomedia/glink.svg?branch=master)](https://travis-ci.org/knomedia/glink)
 
 create customizable links to your graphite targets.
 
