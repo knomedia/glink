@@ -1,6 +1,6 @@
 {
   "name": "glink",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "generate graphite links",
   "main": "index.js",
   "scripts": {
@@ -8,6 +8,14 @@
   },
   "author": "knomedia@gmail.com",
   "license": "MIT",
+  "keywords": "graphite, link",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/knomedia/glink.git"
+  },
+  "bugs": {
+    "url": "https://github.com/knomedia/glink/issues"
+  },
   "dependencies": {
     "lil-uri": "0.2.0",
     "object.assign": "1.1.1"
