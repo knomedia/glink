@@ -171,6 +171,28 @@ well.
 For sanity define your `templateDefaults` in the same order they appear in your `template`.
 
 
+## Utilities
+
+There are several modules that may be useful on their own within glink. Here are a few of them:
+
+### wrapTarget
+
+```javascript
+wrapTarget(target:string, func:string, value:string|number)
+```
+
+Takes a graphite target (i.e. `stats.timers.requests.users.index.mean`), and wraps it in a graphite function (i.e. `alias`), with the value.
+
+```javascript
+var wrapTarget = require('glink/lib/wrapTarget');
+
+var target = 'stats.timers.requests.users.index.mean';
+var newTarget = wrapTarget(target, 'alias', 'users index');
+// "alias(stats.timers.requests.users.index.mean, 'users index')"
+```
+
+
+
 ## Contributing
 
 1. Fork it ( https://github.com/knomedia/glink/fork )
