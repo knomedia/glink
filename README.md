@@ -175,6 +175,31 @@ For sanity define your `templateDefaults` in the same order they appear in your 
 
 There are several modules that may be useful on their own within glink. Here are a few of them:
 
+### createTarget
+
+```javascript
+createTarget(values:array, config:object)
+```
+
+The config object can be the same config object as used in the main glink function. `createTarget` will look for `template`, `templateDefaults`, and `templateDefaultDelimiter`. See the table above for explanations with regards to the config. The `values` arg takes an array of values to be substituted into the template, in the order they are defined in the the `templateDefaults`.
+
+
+```javascript
+var createTarget = require('glink/lib/createTarget');
+
+var config = {};
+config.template = 'stats.timers.app.!!#controller#!!.!!#action#!!.mean';
+config.templateDefaults = [
+  '!!#controller#!!===files',
+  '!!#action#!!===index'
+];
+var values = ['admin', 'show']
+var target = createTarget(values, config);
+// stats.timers.prod.request.admin.show.mean
+
+```
+
+
 ### wrapTarget
 
 ```javascript
