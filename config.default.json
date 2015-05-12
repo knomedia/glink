@@ -12,8 +12,10 @@
   "templateDefaultDelimiter": "===",
 
   "paramsDefaults": {
-    "from": "-1week",
+    "from": "-1w",
     "width": "450",
     "height": "450"
-  }
+  },
+
+  "absoluteTimes": false
 }

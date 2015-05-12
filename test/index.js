@@ -5,3 +5,5 @@ require('./lib/createParams');
 require('./lib/createTarget');
 require('./lib/glink');
 require('./lib/wrapTarget');
+require('./lib/absoluteTime');
+require('./lib/coerceParams');

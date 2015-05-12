@@ -1,6 +1,6 @@
 {
   "name": "glink",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "generate graphite links",
   "main": "index.js",
   "scripts": {
@@ -18,7 +18,8 @@
   },
   "dependencies": {
     "lil-uri": "0.2.0",
-    "object.assign": "1.1.1"
+    "object.assign": "1.1.1",
+    "strftime": "^0.9.0"
   },
   "bin": {
     "glink": "bin/glink.js"

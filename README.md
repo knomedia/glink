@@ -144,6 +144,9 @@ KeyName     | Required? | Default       | Notes
 | templateDefaults| X   | <none>        | An array of strings
 | templateDefaultDelimiter| | ===       | value used to split templateDefaults into variable and default value
 | paramsDefaults |      |      {}       | an object with key, value param and value defaults to apply
+| absoluteTimes |       | false         | [experimental*] convert relative 'from' and 'until' times to absolute |
+
+* takes known graphite [relative times](http://graphite.readthedocs.org/en/latest/render_api.html#from-until) and convert them to absolute
 
 #### templates
 Your config `template` is a template used to create a graphite target. You can
