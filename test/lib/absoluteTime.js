@@ -19,6 +19,13 @@ describe('absoluteTime', function() {
   });
 
   it('should build valid dates for hour offset', function(){
+    var results = absoluteTime('-2h');
+    var expected = new Date();
+    expected.setHours(expected.getHours() - 2);
+    assert.equal(results.toString(), expected.toString());
+  });
+
+  it('should build valid dates for day offset', function(){
     var results = absoluteTime('-4d');
     var expected = new Date();
     expected.setDate(expected.getDate() - 4);
