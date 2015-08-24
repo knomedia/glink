@@ -83,4 +83,23 @@ describe('createParams', function() {
     });
   });
 
+  it('replaces default target when any targets passed', function(){
+    var args = [
+      '--target=arg.target',
+      '--target=other.arg.target'
+    ];
+    var defaults = {
+      target: 'default.target',
+      foo: 'bar'
+    }
+    var params = createParams(args, defaults, true);
+    deepEqual(params, {
+      foo: 'bar',
+      target: [
+        'arg.target',
+        'other.arg.target'
+      ]
+    });
+  });
+
 });
